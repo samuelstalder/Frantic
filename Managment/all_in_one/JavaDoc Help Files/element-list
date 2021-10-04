@@ -1,0 +1,12 @@
+ch.zhaw.theluckyseven.frantic
+ch.zhaw.theluckyseven.frantic.controller
+ch.zhaw.theluckyseven.frantic.controller.computer_strategies
+ch.zhaw.theluckyseven.frantic.model.gamelogic
+ch.zhaw.theluckyseven.frantic.model.gamelogic.component.card
+ch.zhaw.theluckyseven.frantic.model.gamelogic.component.card.eventcard
+ch.zhaw.theluckyseven.frantic.model.gamelogic.component.card.specialcard
+ch.zhaw.theluckyseven.frantic.model.gamelogic.component.deck
+ch.zhaw.theluckyseven.frantic.model.gamelogic.component.player
+ch.zhaw.theluckyseven.frantic.model.server_client_communication
+ch.zhaw.theluckyseven.frantic.view
+zh.zhaw.theluckyseven.frantic

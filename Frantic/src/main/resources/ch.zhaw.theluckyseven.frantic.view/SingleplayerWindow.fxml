@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="610.0" maxWidth="820.0" minHeight="610.0" minWidth="820.0" prefHeight="610.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.zhaw.theluckyseven.frantic.controller.SingleplayerController">
+   <children>
+      <GridPane hgap="4.0" maxHeight="610.0" maxWidth="820.0" minHeight="610.0" minWidth="820.0" prefHeight="610.0" prefWidth="820.0" vgap="4.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="197.0" prefWidth="197.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="197.0" prefWidth="197.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="197.0" prefWidth="197.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="197.0" prefWidth="197.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="95.0" minHeight="95.0" prefHeight="95.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="95.0" minHeight="95.0" prefHeight="95.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="95.0" minHeight="95.0" prefHeight="95.0" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="95.0" minHeight="95.0" prefHeight="95.0" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="95.0" minHeight="95.0" prefHeight="95.0" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="95.0" minHeight="95.0" prefHeight="95.0" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER" maxHeight="95.0" maxWidth="197.0" minHeight="95.0" minWidth="197.0" prefHeight="95.0" prefWidth="197.0" spacing="15.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <children>
+                  <Button fx:id="helpButton" mnemonicParsing="false" onAction="#helpButtonPressed" prefHeight="43.0" prefWidth="77.0" text="Help" />
+               </children>
+            </HBox>
+            <TitledPane id="gameTypPane" collapsible="false" maxHeight="190.0" maxWidth="800.0" minHeight="190.0" minWidth="800.0" prefHeight="190.0" prefWidth="800.0" text="Game Type &amp; Duration" GridPane.columnSpan="4" GridPane.rowIndex="2" GridPane.rowSpan="2">
+               <content>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <RadioButton fx:id="quickPlayRadioButton" mnemonicParsing="false" text="Quickplay">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </RadioButton>
+                              <Separator prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Separator>
+                              <Label alignment="TOP_CENTER" contentDisplay="TEXT_ONLY" text="~10 min">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <RadioButton fx:id="shortGameRadioButton" mnemonicParsing="false" text="Short Game">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </RadioButton>
+                              <Separator prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Separator>
+                              <Label contentDisplay="TEXT_ONLY" text="~ 35 min">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <RadioButton fx:id="normalGameRadioButton" mnemonicParsing="false" text="Normal Game">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </RadioButton>
+                              <Separator prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Separator>
+                              <Label alignment="BOTTOM_LEFT" contentDisplay="TEXT_ONLY" text="~60 min">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <RadioButton fx:id="longGameRadioButton" mnemonicParsing="false" text="Long Game">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </RadioButton>
+                              <Separator prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Separator>
+                              <Label contentDisplay="TEXT_ONLY" text="~ 90 min">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                  </HBox>
+               </content>
+            </TitledPane>
+            <TitledPane id="playersPane" collapsible="false" maxHeight="190.0" maxWidth="599.0" minHeight="95.0" minWidth="599.0" prefHeight="95.0" prefWidth="599.0" text="AI-Players" GridPane.columnSpan="3" GridPane.rowIndex="1">
+               <content>
+                  <Slider fx:id="playerSlider" blockIncrement="1.0" majorTickUnit="1.0" max="7.0" min="1.0" minorTickCount="0" prefHeight="47.0" prefWidth="597.0" showTickLabels="true" snapToTicks="true" />
+               </content>
+            </TitledPane>
+            <Button fx:id="startGameButton" defaultButton="true" maxHeight="95.0" maxWidth="197.0" minHeight="95.0" minWidth="197.0" mnemonicParsing="false" onAction="#startGameButtonPressed" prefHeight="95.0" prefWidth="197.0" text="Start Game" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button fx:id="cancelButton" cancelButton="true" maxHeight="95.0" maxWidth="197.0" minHeight="95.0" minWidth="197.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="95.0" prefWidth="197.0" text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TitledPane collapsible="false" maxHeight="190.0" maxWidth="800.0" minHeight="95.0" minWidth="599.0" prefHeight="190.0" prefWidth="599.0" text="Player">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label id="NameLabel" text="Please enter your player name:" />
+                        <TextField fx:id="nameField" prefHeight="54.0" prefWidth="577.0" />
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+            <ImageView fitHeight="78.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@frantic1.jpeg" />
+               </image>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </GridPane>
+   </children>
+</AnchorPane>

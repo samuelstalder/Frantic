@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text>Space for diagram note
+
+</help_text>
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>670</x>
+      <y>10</y>
+      <w>280</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Deck&lt;T extends Card&gt;
+--
+- cards: List&lt;T&gt;
+--
+~shuffle(): void
+~drawCard(): Card
+~drawCard(int cardsCount): List&lt;Card&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>800</x>
+      <y>100</y>
+      <w>30</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>250</y>
+      <w>350</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>Game
+--
+-players: List&lt;Player&gt;
+-gameScore: Map&lt;Player, Integer&gt;
+-activeRound: Round
+-roundsCount: int
++WIN_SCORE: final int
+--
++startGame(Player): void
++endGame(): Map&lt;Player, Integer&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>800</x>
+      <y>390</y>
+      <w>50</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1..8</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>600</y>
+      <w>160</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Player
+--
+-user: User
+-id: int
+-hand : List&lt;HandCard&gt;
+-isActive: boolean
+--
+~getCardsCount(): int
+~addCard(HandCard): void
+~removeCard(int): Card
+~removeHand()
+~block(): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>200</y>
+      <w>280</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>Round
+--
+-eventCards: Deck&lt;EventCard&gt;
+-handCards: Deck&lt;HandCard&gt;
+-score: Map&lt;Player, Integer&gt;
+-activeEvents: Map&lt;EventCard,Integer&gt;
+-activePlayer: Player
+-playOrder: List&lt;Player&gt;
+-discardPile: Stack&lt;HandCard&gt;
+--
+~startRound(): Map&lt;Player, Integer&gt;
++dealCards(Player, int): List&lt;HandCard&gt;
++dealHandCard(Player): HandCard
+~dealEventCard(): EventCard
++playCard(Player, Card):boolean
+-validateMove(): boolean
+~hasWinner(): boolean
+~getWinner(): Player
+-blockPlayer(Player, int): void
+-setNextPlayer(int): void
+-swapHands(Player, Player): void
+-calculateRoundScore(): void
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>980</x>
+      <y>360</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>940</x>
+      <y>60</y>
+      <w>540</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;520.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>650</y>
+      <w>600</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;580.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1460</x>
+      <y>780</y>
+      <w>130</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>SpecialCard
+--
+-description: String
+-symbol: Symbol
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1470</x>
+      <y>630</y>
+      <w>80</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>/HandCard/
+--
+-value: int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1630</x>
+      <y>630</y>
+      <w>110</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>NumeralCard
+--
+-number: int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1780</x>
+      <y>20</y>
+      <w>150</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>EventCard
+--
+- description: String
+- duration: int
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1460</x>
+      <y>20</y>
+      <w>120</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>/Card/
+--
+-id: int
+-name: String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1570</x>
+      <y>60</y>
+      <w>230</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1730</x>
+      <y>650</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>620</y>
+      <w>110</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>User
+--
+-name: String
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>650</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1540</x>
+      <y>650</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1510</x>
+      <y>670</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1790</x>
+      <y>790</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>ColoredSpecialCard
+--
+- color: CardColor
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1790</x>
+      <y>630</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>ColoredNumeralCard
+--
+- color: CardColor
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1510</x>
+      <y>70</y>
+      <w>30</w>
+      <h>580</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;560.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1580</x>
+      <y>810</y>
+      <w>230</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1640</x>
+      <y>180</y>
+      <w>110</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+CardColor
+--
+ANY
+BLACK
+BLUE
+RED
+GREEN
+YELLOW</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1930</x>
+      <y>650</y>
+      <w>80</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>60.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1930</x>
+      <y>730</y>
+      <w>80</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1890</x>
+      <y>300</y>
+      <w>140</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+CardSymbol
+--
+EXCHANGE
+GIFT
+SKIP
+CHANCE
+FANTASTIC
+FANTASTIC4
+COUNTERATTACK
+NICETRY
+EXCHANGE
+GIFT
+SKIP
+CHANCE
+FANTASTIC
+FANTASTIC4 
+COUNTERATTACK 
+NICETRY
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1580</x>
+      <y>410</y>
+      <w>230</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>GameConfiguration
+--
++defaultEventsDeck&lt;EventCard&gt; ed
++defaultHandCardsDeck&lt;HandCard&gt; cd</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1680</x>
+      <y>310</y>
+      <w>30</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1800</x>
+      <y>440</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1990</x>
+      <y>700</y>
+      <w>190</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Colored
+--
++setColor(CardColor): void
++getColor(): CardColor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>10</y>
+      <w>560</w>
+      <h>450</h>
+    </coordinates>
+    <panel_attributes>&lt;interface&gt;
+ Model
+--
+
++startGame(): void
++addPlayer(User): int // unique player in game id
++removePlayer(int): void
++endGame(): void
+
++getActivePlayer(): int
++acceptCard(int): boolean // in: card id
++dealCard(): int // &lt;- unique in game card id
++getHandSize(int): int
++getPlayerHand(int): List &lt;T extends HandCard&gt;
++getEventCards: int
++getDiscardPileTopCard: &lt;T extends HandCard&gt;
++endTurn(): boolean
+
++acceptNumber(int): boolean
++acceptColor(CardColor): boolean
++acceptPlayer(int): boolean//"Thief", "Exchange", "Gift"
+??+acceptCardsChoice(int,List&lt;Integer&gt;): boolean // see event card "Thief", "Exchange"
++//todo special favours
+
++getRoundWinner(): int
++getRoundsCount(): int
++getGameScore(): String
++getLastRoundScore(): String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>320</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+</panel_attributes>
+    <additional_attributes>90.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+</diagram>

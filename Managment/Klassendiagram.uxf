@@ -1,0 +1,78 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>248</x><y>330</y><w>140</w><h>70</h></coordinates><panel_attributes>HandCard (abstract)
+--
+color: List
+--
+isColor(color):boolean
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>348</x><y>180</y><w>120</w><h>120</h></coordinates><panel_attributes>Player
+--
+name: String
+cards: List
+points: int
+canCounter: boolean
+--
+nextMove()
+drawCard()
+counterAttack(): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>38</x><y>400</y><w>110</w><h>50</h></coordinates><panel_attributes>EventCard
+--
+effect: ?</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>48</x><y>240</y><w>150</w><h>110</h></coordinates><panel_attributes>Card (abstract)
+--
+image
+
+--
+playCard(owner: Player)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>488</x><y>330</y><w>190</w><h>140</h></coordinates><panel_attributes>Game
+--
+currentPlayer: Player
+players: List
+maxPoints: int
+currentCard: Card
+--
+startGame()
+nextPlayer()
+shuffleCards()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>498</x><y>530</y><w>150</w><h>120</h></coordinates><panel_attributes>Socket
+--
+connected: boolean
+port: int
+address: String
+--
+connect():boolean
+disconnect(): boolean
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>298</x><y>220</y><w>70</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=0..n</panel_attributes><additional_attributes>10;110;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>458</x><y>210</y><w>130</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1..n</panel_attributes><additional_attributes>10;10;110;120</additional_attributes></element><element><id>Relation</id><coordinates><x>78</x><y>341</y><w>60</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;60;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>188</x><y>271</y><w>130</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>110;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>548</x><y>460</y><w>50</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=0..1</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>168</x><y>150</y><w>120</w><h>70</h></coordinates><panel_attributes>ComputerPlayer
+--
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>278</x><y>171</y><w>90</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;70;30</additional_attributes></element><element><id>UMLClass</id><coordinates><x>458</x><y>681</y><w>170</w><h>70</h></coordinates><panel_attributes>Config (abstract)
+--
+COLORS: Enum
+--
+setupCards();</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>168</x><y>420</y><w>140</w><h>70</h></coordinates><panel_attributes>SpecialCard
+--
+value: int
+name: String
+description: String
+--
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>328</x><y>440</y><w>140</w><h>80</h></coordinates><panel_attributes>NumberCard
+--
+number: int
+value: int
+--
+getValue()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>238</x><y>391</y><w>80</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;30;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>338</x><y>391</y><w>60</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>40;50;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>38</x><y>500</y><w>120</w><h>30</h></coordinates><panel_attributes>FuckYou
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>38</x><y>540</y><w>120</w><h>30</h></coordinates><panel_attributes>Curse
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>298</x><y>700</y><w>120</w><h>30</h></coordinates><panel_attributes>Fantastic
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>298</x><y>660</y><w>120</w><h>30</h></coordinates><panel_attributes>FantasticFour
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>38</x><y>620</y><w>120</w><h>30</h></coordinates><panel_attributes>Troublemaker
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>38</x><y>780</y><w>120</w><h>30</h></coordinates><panel_attributes>Skip</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>38</x><y>580</y><w>120</w><h>30</h></coordinates><panel_attributes>Gift</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>38</x><y>740</y><w>120</w><h>30</h></coordinates><panel_attributes>2nd Chance</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>38</x><y>660</y><w>120</w><h>30</h></coordinates><panel_attributes>Exchange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>38</x><y>820</y><w>120</w><h>30</h></coordinates><panel_attributes>Thief</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>98</x><y>461</y><w>90</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;40;70;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>38</x><y>700</y><w>120</w><h>30</h></coordinates><panel_attributes>ColourSwap</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>168</x><y>700</y><w>120</w><h>30</h></coordinates><panel_attributes>Special Flavours</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>168</x><y>660</y><w>120</w><h>30</h></coordinates><panel_attributes>Equality</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>168</x><y>740</y><w>120</w><h>30</h></coordinates><panel_attributes>Inequality</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>358</x><y>550</y><w>120</w><h>30</h></coordinates><panel_attributes>BlackCard</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>388</x><y>511</y><w>50</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>30;40;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>168</x><y>600</y><w>120</w><h>50</h></coordinates><panel_attributes>ColorPicker
+--
+chooseColor()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>298</x><y>600</y><w>120</w><h>50</h></coordinates><panel_attributes>WishCard
+--
+chooseColorOrNumber()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>208</x><y>481</y><w>40</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;120;20;10</additional_attributes></element><element><id>Relation</id><coordinates><x>258</x><y>481</y><w>110</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>90;120;10;10</additional_attributes></element></diagram>
